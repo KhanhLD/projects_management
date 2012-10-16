@@ -1,0 +1,23 @@
+<% provide(:title, @project.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @project.name %>
+      </h1>
+			<%= @project.name %><br>
+			<%= @project.description %><br>
+			<%= @project.start %><br>
+			<%= @project.end %><br>
+    </section>
+  </aside>
+	<div class="span8">
+		<% if @project.groups.any? %>
+			<h3>Members (<%= @project.groups.count %>)</h3>
+			<ol class="groups">
+				<%= render @groups %>
+			</ol>
+			<%= will_paginate @groups %>
+		<% end %>
+	</div>
+</div>

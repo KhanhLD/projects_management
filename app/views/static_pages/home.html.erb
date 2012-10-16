@@ -1,0 +1,10 @@
+<% provide(:title, 'Home') %>
+<% if signed_in? %>
+	<%= render current_user %>
+<% else %>
+<div class="center hero-unit">
+	<h1>Projects Management</h1>
+	<p>Welcome to the Projects Management system.</p>
+	<p><%= link_to "Sign up now", signup_path, class: "btn btn-large btn-primary" %></p>
+</div>
+<% end %>

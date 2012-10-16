@@ -1,4 +1,29 @@
 ProjectsManagement::Application.routes.draw do
+
+	root to: 'static_pages#home'
+
+	match '/signup', to: 'users#new'
+
+	match '/newproject', to: 'projects#new'
+
+	match '/signin',  to: 'sessions#new'
+
+  match '/signout', to: 'sessions#destroy', via: :delete
+
+	match '/newgroup', to: 'groups#new'
+
+	match '/newschedule', to: 'schedules#new'
+
+	resources :users
+
+	resources :projects
+
+	resources :sessions, only: [:new, :create, :destroy]
+
+	resources :groups
+
+	resources :schedules
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

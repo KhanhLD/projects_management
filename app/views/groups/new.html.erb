@@ -1,0 +1,15 @@
+<% provide(:title, 'Assign project') %>
+<h1>Asssign project</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+	  <%= form_for(@group) do |f| %>
+	  	Choose a user:
+	  	<%= f.collection_select(:user_id, User.all, :id, :name ) %>
+	  	Choose a project:
+	  	<%= f.collection_select(:project_id, Project.all, :id, :name ) %>
+
+	  	<%= f.submit "Assign project", class: "btn btn-large btn-primary"%>
+	  <% end %>
+  </div>
+</div>
