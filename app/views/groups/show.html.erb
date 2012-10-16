@@ -3,7 +3,20 @@
 		<section>
 				<%= @group.id %><br>
 				<%= @group.user.name %><br>
-				<%= @group.project.name %><br>		
+				<%= @group.project.name %><br>
 		</section>
 	</aside>
+	<div class="span8">	
+		<%= form_for(@schedule) do |f| %>
+			<%= f.hidden_field :group_id, {:value => params[:id]}%>
+			
+			<%= f.label :task%>
+			<%= f.text_field :task %>
+				
+			<%= f.label :day %>
+ 			<%= f.text_field :day%>
+
+   		<%= f.submit "Create schedule", class: "btn btn-large btn-primary"%>
+    <% end %>
+	</div>
 </div>

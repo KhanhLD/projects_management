@@ -12,8 +12,6 @@ ProjectsManagement::Application.routes.draw do
 
 	match '/newgroup', to: 'groups#new'
 
-	match '/newschedule', to: 'schedules#new'
-
 	resources :users
 
 	resources :projects

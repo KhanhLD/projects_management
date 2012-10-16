@@ -18,6 +18,7 @@ class GroupsController < ApplicationController
 
 	def show
 		@group = Group.find(params[:id])
+		@schedule = @group.schedules.new
 	end
 
 	def index

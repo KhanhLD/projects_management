@@ -1,10 +1,13 @@
 class SchedulesController < ApplicationController
-  def new
-		@group = Group.find(params[:id])
-		@schedule = Schedule.new
-  end
+
+	before_filter :admin_user, only: [:index] 
 
 	def create
+		@schedule = Schedule.new(params[:schedule])
+		if @schedule.save
+			flash[:success] = "Schedule created!"
+			redirect_to current_user
+		end
 	end
 
 	def index

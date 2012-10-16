@@ -1,3 +1,9 @@
 <% provide(:title, 'All schedules') %>
 <h1>All schedule</h1>
+<%= will_paginate %>
 
+<ul class="schedules">
+  <%= render @schedules %>
+</ul>
+
+<%= will_paginate %>
